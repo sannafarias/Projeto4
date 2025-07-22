@@ -30,10 +30,23 @@ console.log('\\nEstudantes ativos com média acima de 80:');
 highPerformingActiveStudents.forEach((student) => console.log(student.name));
 
 //a. Use filter para encontrar estudantes inativos
-const inactiveStudentsWithLowAverage = students.filter(student => {
-  const average = student.grade.reduce((sum, grade) => sum + grade, 0) / student.grade.length;
-  return !student.active && average < 50;
+const inactiveStudents = students.filter(student => !student.active);
+
+console.log('\nEstudantes inativos:');
+inactiveStudents.forEach(student => {
+  console.log(`- ${student.name}`);
 });
 
-console.log('\nEstudantes inativos com média abaixo de 50:');
-inactiveStudentsWithLowAverage.forEach(student => console.log(student.name));
+
+//b. Use find para encontrar o estudante com id = 3
+
+const studentWithId3 = students.find(student => student.id === 3);
+console.log('\nEstudante com id = 3:', studentWithId3);
+
+//c. Use filter para encontrar estudantes que tiraram pelo menos uma nota abaixo de 70
+
+const studentsWithLowGrades = students.filter(student => {
+  return student.grade.some(grade => grade < 70);
+});
+console.log('\nEstudantes com pelo menos uma nota abaixo de 70:');
+studentsWithLowGrades.forEach(student => console.log(student.name));
