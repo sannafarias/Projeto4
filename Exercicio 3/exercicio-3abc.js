@@ -16,5 +16,24 @@ console.log('Estudantes com 20 anos ou mais:', studentsOver20);
 
 // 2. Usando find para encontrar o primeiro estudante com nota > 90
 
-const firstStudentWithGradeOver90 = students.find(student => student.grade.some(grade => grade > 90));
+const firstStudentWithGradeOver90 = students.find(student => {return student.grade.some(grade => grade > 90);});
 console.log('Primeiro estudante com nota maior que 90:', firstStudentWithGradeOver90);
+
+// 3. Usando filter para encontrar estudantes ativos com media acima de 80
+const highPerformingActiveStudents = students.filter(student => {
+  const average = student.grade.reduce((sum, grade) => sum + grade, 0) / student.grade.length;
+  return student.active && average > 80;
+}
+);
+  
+console.log('\\nEstudantes ativos com média acima de 80:');
+highPerformingActiveStudents.forEach((student) => console.log(student.name));
+
+//a. Use filter para encontrar estudantes inativos
+const inactiveStudentsWithLowAverage = students.filter(student => {
+  const average = student.grade.reduce((sum, grade) => sum + grade, 0) / student.grade.length;
+  return !student.active && average < 50;
+});
+
+console.log('\nEstudantes inativos com média abaixo de 50:');
+inactiveStudentsWithLowAverage.forEach(student => console.log(student.name));
