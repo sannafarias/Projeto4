@@ -1,0 +1,13 @@
+{
+  "name": "projeto4",
+  "version": "1.0.0",
+  "description": "Exercicio 1 - Sanna\r Exercicio 2 - Mariana\r Exercicio 3 - Maria letra a, b e c - Mateus letra d\r Exercicio 4 - Stephan letra a, b e c - Mateus letra d\r Exercicio 5 - Fernanda, Gabriel e Kailany - Mateus letra j",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
